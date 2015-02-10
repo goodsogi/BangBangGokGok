@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+<co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity
+        android:id="@+id/softmenu_menu_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+    </co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
+<ListView
+        android:id="@+id/mylist"
+        android:layout_marginTop="7dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </ListView>
+</LinearLayout>

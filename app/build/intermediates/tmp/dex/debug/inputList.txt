@@ -1,0 +1,9 @@
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/classes/debug
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-42f04259376e7850f34c81e66176fc818526b8ca.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/httpmime-4.2.1-39e6199b074cf0064d6e7af612c3758911f5bedd.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-b69a507d3ccd93c22e1f8d38f1540119b04dc7e4.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.2-06cc9f63fdd939eb717a2b65f07b8972896cc64c.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-669922490a32911aef71cb855090968eb3e0871a.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-158248f34c5a01db00b04b8d7023b0f42d909998.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-c318571a0d4c1f21c20fb271b26ac3d140934c58.jar
+/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-23e55a22ccbe34c0955aa4eb3f26efcf039befb1.jar

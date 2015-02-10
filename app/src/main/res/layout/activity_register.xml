@@ -1,0 +1,1357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:id="@+id/top_lay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_find_box"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_main_top_logo_2" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/top_lay" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:text="위치 설정"
+                    android:textColor="#000000"
+                    android:textSize="19dp" />
+
+                <ImageButton
+                    android:id="@+id/location_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/img_upload_01"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:text="사진 업로드"
+                    android:textColor="#000000"
+                    android:textSize="19dp" />
+
+                <EditText
+                    android:id="@+id/detail_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/img_upload_03"
+                    android:gravity="top"
+                    android:hint="최대한 자세히 설명해 주세요"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000"
+                    android:textSize="13dp" />
+
+                <Button
+                    android:id="@+id/picture_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/img_upload_02"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:text="방 상세설명"
+                    android:textColor="#000000"
+                    android:textSize="19dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_upload_s_title"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:text="기본 정보"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="19dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="제목"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <EditText
+                        android:id="@+id/name_edt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/img_upload_04"
+                        android:hint="   풀옵션 원룸입니다."
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="방종류"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/room_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="37dp"
+                        android:layout_marginRight="50dp"
+                        android:background="#FFFFFF"
+                        android:gravity="right|center_vertical"
+                        android:text="원룸"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="가격정보"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <EditText
+                        android:id="@+id/priv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/img_upload_04"
+                        android:hint="   예)1000/50 , 2000/40 , 6000"
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="가격정보"
+                        android:textColor="#000000"
+                        android:textSize="19dp"
+                        android:visibility="invisible" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="30dp"
+                        android:text="- &apos;보증금/월세&apos;를 콤마로 구분해서 입력해주세요. &apos;월세&apos;없이 &apos;보증금&apos;만 쓴경우 전세가능 매물로 등록됩니다."
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="가격정보"
+                        android:textColor="#000000"
+                        android:textSize="19dp"
+                        android:visibility="invisible" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="30dp"
+                        android:text="- 1000/50, 2000/40, 6000로 입력한 경우 총 세가지의 가격으로 등록됩니다."
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="가격정보"
+                        android:textColor="#000000"
+                        android:textSize="19dp"
+                        android:visibility="invisible" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="30dp"
+                        android:text="- 검색 조건에 맞는 금액이 자동 노출되며, 앞쪽에 있는 금액이 우선노출 됩니다."
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_upload_s_title"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:text="추가 정보"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="해당층수"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/floor_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="19dp"
+                        android:layout_marginRight="50dp"
+                        android:background="#FFFFFF"
+                        android:gravity="right|center_vertical"
+                        android:text="1층"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:id="@+id/size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:text="방크기"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <EditText
+                        android:id="@+id/roomsize_edt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/pyung"
+                        android:layout_toRightOf="@+id/size"
+                        android:background="@drawable/img_upload_04"
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:id="@+id/pyung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:text="평"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="옵션사항"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="55dp"
+                        android:background="@drawable/icon_upload_01" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="에어컨"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option01_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option01_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="세탁기"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option02_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option02_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="침대"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option03_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option03_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="책상"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option04_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option04_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="옷장"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option05_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option05_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="TV"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option06_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option06_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="신발장"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option07_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option07_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="냉장고"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option08_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option08_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="가스레인지"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option09_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option09_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="인덕션"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option10_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option10_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="전자레인지"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option11_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option11_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="전자도어락"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option12_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option12_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="비데"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option13_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option13_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="입주가능날"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/day_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="50dp"
+                        android:background="#FFFFFF"
+                        android:gravity="right|center_vertical"
+                        android:text="2014-10-15 이후"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="난방종류"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/heat_btn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="50dp"
+                        android:background="#FFFFFF"
+                        android:gravity="right|center_vertical"
+                        android:text="개별 난방"
+                        android:textColor="#000000"
+                        android:textSize="19dp" />
+                </LinearLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:id="@+id/bi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="30dp"
+                        android:text="관리비"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <EditText
+                        android:id="@+id/pay_edt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/pay"
+                        android:layout_toRightOf="@+id/bi"
+                        android:background="@drawable/img_upload_04"
+                        android:hint="0   "
+                        android:gravity="right|center_vertical"
+                        android:textColor="#000000"
+                        android:textSize="13dp" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:id="@+id/pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="50dp"
+                        android:text="만원"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="관리비포함항목"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="55dp"
+                        android:background="@drawable/icon_upload_01" />
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="전기세"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option21_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option21_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="수도세"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option22_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option22_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="인터넷"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option23_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option23_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="청소비"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option24_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option24_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="도시가스"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option25_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option25_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#DCE1E7" >
+
+                        <co.kr.app.bangbanggokgok.common.H5TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="55dp"
+                            android:text="유선TV"
+                            android:textColor="#000000"
+                            android:textSize="19dp" />
+
+                        <ImageView
+                            android:id="@+id/option26_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="53dp"
+                            android:background="@drawable/icon_upload_02" />
+
+                        <Button
+                            android:id="@+id/option26_btn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00000000" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="주차"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/po01_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/im01_btn"
+                        android:background="@anim/possible"
+                        android:gravity="right|center_vertical" />
+
+                    <Button
+                        android:id="@+id/im01_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="19dp"
+                        android:background="@anim/impossible"
+                        android:gravity="right|center_vertical" />
+                </RelativeLayout>
+
+                <co.kr.app.bangbanggokgok.common.H5TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text="────────────────────────────────────────────────────────────────────────────────────────────────────"
+                    android:textSize="19dp" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="애완동물"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/po02_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/im02_btn"
+                        android:background="@anim/possible"
+                        android:gravity="right|center_vertical" />
+
+                    <Button
+                        android:id="@+id/im02_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="19dp"
+                        android:background="@anim/impossible"
+                        android:gravity="right|center_vertical" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/write_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/icon_upload_04" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

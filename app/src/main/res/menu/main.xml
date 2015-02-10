@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/SimpleMenu"
+        android:icon="@drawable/icon_top_menu_01"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="매물등록"/>
+    <item
+        android:id="@+id/IconMenu"
+        android:icon="@drawable/icon_top_menu_02"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="찜목록"/>
+        
+</menu>
