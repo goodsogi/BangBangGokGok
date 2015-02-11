@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/back_btn" android:onClick="goBack"/>
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="7dp"
+            android:text="방방곡곡"
+            android:textColor="#93c41d"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#93c41d" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="423dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_join_box"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="35dp"
+            android:drawableLeft="@drawable/icon_join_03"
+            android:gravity="center_vertical"
+            android:paddingLeft="7dp"
+            android:text="공인중개사 가입 신청서"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/brokerName"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="업체명"
+             />
+
+
+        <EditText
+            android:id="@+id/brokerRegisterNo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="중개등록번호" />
+
+        <EditText
+            android:id="@+id/bossName"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="대표이름" />
+
+        <EditText
+            android:id="@+id/phoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="전화번호" />
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="주소" />
+
+        <EditText
+            android:id="@+id/agentName"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="담당자 이름" />
+
+        <EditText
+            android:id="@+id/agentEmail"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="담당자 이메일주소" />
+
+        <EditText
+            android:id="@+id/agentMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="담당자 휴대폰 번호" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="비밀번호(6자리 이상)" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="20dp"
+        android:onClick="signUp"
+        android:background="@drawable/icon_join_04" />
+</LinearLayout><!-- From: file:/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/src/main/res/layout/activity_signup_broker.xml -->

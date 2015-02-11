@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity
+        android:id="@+id/softmenu_menu_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+    </co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <co.kr.app.bangbanggokgok.common.PinnedHeaderListView
+            android:id="@+id/list"
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false" />
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/src/main/res/layout/activity_mediation.xml -->
