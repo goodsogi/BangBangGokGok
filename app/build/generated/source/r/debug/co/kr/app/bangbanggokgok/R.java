@@ -1861,15 +1861,17 @@ containing a value of this type.
         public static final int img_upload_04=0x7f0200ce;
         public static final int img_upload_05=0x7f0200cf;
         public static final int login_check_box_on=0x7f0200d0;
-        public static final int mask=0x7f0200d1;
-        public static final int menu_icon_01=0x7f0200d2;
-        public static final int menu_icon_02=0x7f0200d3;
-        public static final int menu_icon_03=0x7f0200d4;
-        public static final int menu_icon_04=0x7f0200d5;
-        public static final int menu_icon_05=0x7f0200d6;
-        public static final int menu_icon_06=0x7f0200d7;
-        public static final int powered_by_google_dark=0x7f0200d8;
-        public static final int powered_by_google_light=0x7f0200d9;
+        public static final int marker=0x7f0200d1;
+        public static final int marker_broker=0x7f0200d2;
+        public static final int mask=0x7f0200d3;
+        public static final int menu_icon_01=0x7f0200d4;
+        public static final int menu_icon_02=0x7f0200d5;
+        public static final int menu_icon_03=0x7f0200d6;
+        public static final int menu_icon_04=0x7f0200d7;
+        public static final int menu_icon_05=0x7f0200d8;
+        public static final int menu_icon_06=0x7f0200d9;
+        public static final int powered_by_google_dark=0x7f0200da;
+        public static final int powered_by_google_light=0x7f0200db;
     }
     public static final class id {
         public static final int Bottom_txt=0x7f0900a8;

@@ -466,9 +466,9 @@ public final class R {
 		public static final int ic_plusone_small_off_client = 0x7f02005f;
 		public static final int ic_plusone_standard_off_client = 0x7f020060;
 		public static final int ic_plusone_tall_off_client = 0x7f020061;
-		public static final int mask = 0x7f0200d1;
-		public static final int powered_by_google_dark = 0x7f0200d8;
-		public static final int powered_by_google_light = 0x7f0200d9;
+		public static final int mask = 0x7f0200d3;
+		public static final int powered_by_google_dark = 0x7f0200da;
+		public static final int powered_by_google_light = 0x7f0200db;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f090045;

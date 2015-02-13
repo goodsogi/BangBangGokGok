@@ -2,7 +2,13 @@ package co.kr.app.bangbanggokgok;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.location.LocationListener;
@@ -28,7 +34,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.pluslibrary.server.PlusHttpClient;
 import com.pluslibrary.server.PlusOnGetDataListener;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import co.kr.app.bangbanggokgok.activity.AllListActivity;
@@ -214,7 +219,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
         super.onResume();
         setUpMapIfNeeded();
         //에뮬레이터가 위치가 안잡혀 인위적으로 테스트, 나중에 삭제 필요!!
-         showHouseMarkers();
+        showHouseMarkers();
 
     }
 
@@ -301,7 +306,6 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
                 break;
 
 
-
         }
 
     }
@@ -309,12 +313,17 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
     private void drawHouseMarkers(ArrayList<AllListModel> datas) {
         mDatas = datas;
         LatLng position = null;
-        for(int i=0; i< datas.size(); i++) {
-            position =  new LatLng(Double.valueOf(datas.get(i).getLat()), Double.valueOf(datas.get(i).getLng()));
-            mGoogleMap.addMarker(new MarkerOptions().position(position).snippet("" + i).icon(BitmapDescriptorFactory.fromResource(R.drawable.house_icon)));
+        String priceText = null;
+        for (int i = 0; i < datas.size(); i++) {
+            position = new LatLng(Double.valueOf(datas.get(i).getLat()), Double.valueOf(datas.get(i).getLng()));
+//            mGoogleMap.addMarker(new MarkerOptions().position(position).snippet("" + i).title(datas.get(i).getPrice11() + "/" + datas.get(i).getPrice01())
+//                    .icon(BitmapDescriptorFactory.fromResource(datas.get(i).getGubun().equals("1") ? R.drawable.marker_broker : R.drawable.marker)));
+            priceText =  !datas.get(i).getPrice11().trim().equals("")? datas.get(i).getPrice11() + "/" + datas.get(i).getPrice01():datas.get(i).getPrice01();
+            mGoogleMap.addMarker(new MarkerOptions().position(position).snippet("" + i).icon(BitmapDescriptorFactory.fromBitmap(drawTextToBitmap(this,datas.get(i).getGubun(),priceText ))));
+
+
             //마커 클릭처리 필요!!
         }
-
 
 
     }
@@ -324,6 +333,38 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
                 BBGGApiConstants.GET_ALL_LIST,
                 new AllListParser());
 
+    }
+
+    //here I'm trying to draw text bitmap
+    public static Bitmap drawTextToBitmap(Context gContext, String gubun, String gText) {
+        Resources resources = gContext.getResources();
+        float scale = resources.getDisplayMetrics().density;
+        Bitmap bitmap =
+                BitmapFactory.decodeResource(resources, gubun.equals("1") ? R.drawable.marker_broker : R.drawable.marker);
+
+        android.graphics.Bitmap.Config bitmapConfig =
+                bitmap.getConfig();
+        if (bitmapConfig == null) {
+            bitmapConfig = android.graphics.Bitmap.Config.ARGB_8888;
+        }
+        bitmap = bitmap.copy(bitmapConfig, true);
+
+        Canvas canvas = new Canvas(bitmap);
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor( gubun.equals("1") ? Color.RED: Color.BLUE);
+        paint.setTextSize((int) (12 * scale));
+        paint.setShadowLayer(1f, 0f, 1f, Color.WHITE);
+
+        Rect bounds = new Rect();
+        paint.getTextBounds(gText, 0, gText.length(), bounds);
+        int x = (bitmap.getWidth() - bounds.width()) / 2;
+        int y = (bitmap.getHeight() + bounds.height()) / 3;
+
+        canvas.drawText(gText, x, y, paint);
+
+        //canvas.drawText(gText, 0,0, paint);
+
+        return bitmap;
     }
 
 
