@@ -5,7 +5,7 @@
         jar="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/exploded-aar/App.BangBangGokGok/plusLibrary/unspecified/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="170085d995b27e1ae39c7ed1495718f8b92834bc">
+        sha1="0589d9cf5477a17d84c04d470bb9bceee6379e8b">
         <dex dex="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-b69a507d3ccd93c22e1f8d38f1540119b04dc7e4.jar" />
     </item>
     <item
@@ -30,6 +30,13 @@
         <dex dex="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.2-06cc9f63fdd939eb717a2b65f07b8972896cc64c.jar" />
     </item>
     <item
+        jar="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/3.21.1/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0285ad8da812e92dda76ed5d0dcba05724c7911d">
+        <dex dex="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-79f9c7ef19df651a07b1a206b23b224526649812.jar" />
+    </item>
+    <item
         jar="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -42,6 +49,13 @@
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/classes-158248f34c5a01db00b04b8d7023b0f42d909998.jar" />
+    </item>
+    <item
+        jar="/home/johnny/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-78f21044159596ea30bf4f74b04fdbb4d9832ee6.jar" />
     </item>
     <item
         jar="/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/build/intermediates/exploded-aar/App.BangBangGokGok/plusLibrary/unspecified/libs/httpmime-4.2.1.jar"

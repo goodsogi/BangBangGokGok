@@ -26,15 +26,15 @@ import com.pluslibrary.utils.PlusClickGuard;
 import com.pluslibrary.utils.PlusStringEmailChecker;
 import com.pluslibrary.utils.PlusToaster;
 
+import co.kr.app.bangbanggokgok.BBGGCommonActivity;
+import co.kr.app.bangbanggokgok.BBGGConstants;
 import co.kr.app.bangbanggokgok.R;
 import co.kr.app.bangbanggokgok.server.BBGGApiConstants;
 
-public class SignUpBrokerActivity extends Activity implements PlusOnGetDataListener {
+public class SignUpBrokerActivity extends BBGGCommonActivity implements PlusOnGetDataListener {
 
-    private static final int CHOOSE_AREA = 4;
     private static final int SIGN_UP = 2;
-    private String mEmail;
-    private String mPassword;
+    private String mAgentEmail;
 
     /** Called when the activity is first created. */
     @Override
@@ -104,9 +104,9 @@ public class SignUpBrokerActivity extends Activity implements PlusOnGetDataListe
         }
         // 담당자 이메일주소
         EditText agentEmailInput = (EditText) findViewById(R.id.agentEmail);
-        String agentEmail = agentEmailInput.getText().toString();
+        mAgentEmail = agentEmailInput.getText().toString();
 
-        if (agentEmail.equals("")) {
+        if (mAgentEmail.equals("")) {
             PlusToaster.doIt(this, "담당자 이메일주소를 입력해주세요");
             return;
         }
@@ -132,11 +132,10 @@ public class SignUpBrokerActivity extends Activity implements PlusOnGetDataListe
             return;
         }
 
-        //푸시 들어가나??
 
         // 푸시 아이디
-//        BTGcmRegister register = new BTGcmRegister(SignUpActivity.this);
-//        String deviceId = register.getRegistrationId();
+        BBGGGcmRegister register = new BBGGGcmRegister(SignUpBrokerActivity.this);
+        String deviceId = register.getRegistrationId();
 
         List<NameValuePair> postParams = new ArrayList<NameValuePair>();
         postParams.add(new BasicNameValuePair("name", brokerName));
@@ -145,15 +144,13 @@ public class SignUpBrokerActivity extends Activity implements PlusOnGetDataListe
         postParams.add(new BasicNameValuePair("addinfo5", phoneNo));
         postParams.add(new BasicNameValuePair("address1", address));
         postParams.add(new BasicNameValuePair("addinfo3", agentName));
-        postParams.add(new BasicNameValuePair("id", agentEmail));
+        postParams.add(new BasicNameValuePair("id", mAgentEmail));
         postParams.add(new BasicNameValuePair("hphone", agentMobileNo));
         postParams.add(new BasicNameValuePair("passwd", password));
-
-        //처리 필요!!
-       // postParams.add(new BasicNameValuePair("addinfo6", ));
+        postParams.add(new BasicNameValuePair("addinfo6", deviceId));
 
         new PlusHttpClient(this, this, false).execute(SIGN_UP,
-                BBGGApiConstants.SIGN_UP, new PlusInputStreamStringConverter(), postParams);
+                BBGGApiConstants.SIGN_UP_BROKER, new PlusInputStreamStringConverter(), postParams);
 
     }
 
@@ -164,11 +161,26 @@ public class SignUpBrokerActivity extends Activity implements PlusOnGetDataListe
         switch (from) {
 
             case SIGN_UP:
+                if(((String) datas).contains("가입완료")) {
+                    PlusToaster.doIt(this, "가입완료했습니다");
+                    saveUserInfo();
+                } else {
+                    PlusToaster.doIt(this, "가입에 성공하지 못했습니다");
+                }
 
-                //구현 필요
                 break;
         }
 
+    }
+
+    private void saveUserInfo() {
+
+        SharedPreferences sharedPreference = getSharedPreferences(
+                BBGGConstants.PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor e = sharedPreference.edit();
+        e.putString(BBGGConstants.KEY_USER_ID, mAgentEmail);
+        e.putString(BBGGConstants.KEY_USER_TYPE, BBGGConstants.USER_TYPE_BROKER);
+        e.commit();
     }
 
 

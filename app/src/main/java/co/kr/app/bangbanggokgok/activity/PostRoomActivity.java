@@ -1,8 +1,10 @@
 package co.kr.app.bangbanggokgok.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,26 +12,24 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.pluslibrary.img.HttpUtils;
-import com.pluslibrary.server.ApiConstants;
 import com.pluslibrary.server.PlusHttpClient;
 import com.pluslibrary.server.PlusInputStreamStringConverter;
 import com.pluslibrary.server.PlusOnGetDataListener;
 import com.pluslibrary.utils.PlusToaster;
 
 import org.apache.http.entity.mime.MultipartEntity;
-import org.apache.http.entity.mime.content.ByteArrayBody;
 import org.apache.http.entity.mime.content.StringBody;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
+import co.kr.app.bangbanggokgok.BBGGCommonActivity;
+import co.kr.app.bangbanggokgok.BBGGConstants;
 import co.kr.app.bangbanggokgok.R;
 import co.kr.app.bangbanggokgok.server.BBGGApiConstants;
 
 
-public class PostRoomActivity extends Activity implements
+public class PostRoomActivity extends BBGGCommonActivity implements
         PlusOnGetDataListener {
 
     private static final int REGISTER_ROOM = 44;
@@ -60,8 +60,13 @@ public class PostRoomActivity extends Activity implements
             option21, option22, option23, option24, option25, option26;
     EditText detail_edt, name_edt, payimfor_edt, size_edt, pay_edt;
     String[] room = {"원룸", "투룸", "쓰리룸", "오피스텔", "아파트", "주택"};
-    String[] floor = {"1층", "2층", "3층", "4층", "5층"};
+    String[] floor = {"반지하", "1층", "2층", "3층", "4층", "5층", "옥탑"};
+    String[] mHeatTypeValues = {"개별난방", "중앙난방"};
     Button im01, im02, po01, po02;
+    private String option;
+    private String parking;
+    private String userId;
+    private String userType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,7 @@ public class PostRoomActivity extends Activity implements
         findViewById(R.id.picture_btn).setOnClickListener(btnListener);
         findViewById(R.id.room_btn).setOnClickListener(btnListener);
         findViewById(R.id.floor_btn).setOnClickListener(btnListener);
+        findViewById(R.id.heat_btn).setOnClickListener(btnListener);
 
         findViewById(R.id.option01_btn).setOnClickListener(btnListener);
         findViewById(R.id.option02_btn).setOnClickListener(btnListener);
@@ -137,6 +143,7 @@ public class PostRoomActivity extends Activity implements
                     break;
                 case R.id.location_btn:
                     Toast.makeText(getApplicationContext(), "위치설정", 0).show();
+                    startActivity(new Intent(getApplicationContext(), LocationSettingActivity.class));
                     break;
                 case R.id.picture_btn:
                     Toast.makeText(getApplicationContext(), "사진올리기", 0).show();
@@ -146,6 +153,9 @@ public class PostRoomActivity extends Activity implements
                     break;
                 case R.id.floor_btn:
                     Floor();
+                    break;
+                case R.id.heat_btn:
+                    showHeatType();
                     break;
                 case R.id.po01_btn:
                     if (flag01 == false) {
@@ -359,11 +369,34 @@ public class PostRoomActivity extends Activity implements
         }
     };
 
+    private void showHeatType() {
+        AlertDialog.Builder ab = new AlertDialog.Builder(PostRoomActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+        ab.setTitle("선택해주세요.");
+        ab.setItems(mHeatTypeValues, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                changeHeatType(whichButton);
+            }
+        }).setNegativeButton("닫기",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                    }
+                });
+        ab.show();
+    }
+
+    private void changeHeatType(int whichButton) {
+        Button heatType = (Button) findViewById(R.id.heat_btn);
+        heatType.setText(mHeatTypeValues[whichButton]);
+    }
+
 
     /**
-     * 경매등록
+     * 방 등록
      */
     protected void registerRoom() {
+
+        String userId = getUserId();
+        String userType = getUserType();
 
         EditText subjectView = (EditText) findViewById(R.id.name_edt);
         String subject = subjectView.getText().toString();
@@ -373,13 +406,87 @@ public class PostRoomActivity extends Activity implements
             return;
         }
 
+        EditText detailView = (EditText) findViewById(R.id.detail_edt);
+        String detail = detailView.getText().toString();
+
+        if (detail.equals("")) {
+            PlusToaster.doIt(this, "방에 대해 자세히 설명해주세요");
+            return;
+        }
+
+
+        Button roomTypeView = (Button) findViewById(R.id.room_btn);
+        String roomType = getRoomType(roomTypeView.getText().toString());
+
+        EditText priceView = (EditText) findViewById(R.id.priv);
+        String price = priceView.getText().toString();
+
+        if (price.equals("")) {
+            PlusToaster.doIt(this, "가격을 입력해주세요");
+            return;
+        }
+
+        Button floorView = (Button) findViewById(R.id.floor_btn);
+        String floor = getFloor(floorView.getText().toString());
+
+        EditText roomSizeView = (EditText) findViewById(R.id.roomsize_edt);
+        String roomSize = roomSizeView.getText().toString();
+
+        if (roomSize.equals("")) {
+            PlusToaster.doIt(this, "방크기를 입력해주세요");
+            return;
+        }
+
+        String option = getOption();
+
+        EditText moveDateView = (EditText) findViewById(R.id.movedate_edt);
+        String moveDate = moveDateView.getText().toString();
+
+        if (moveDate.equals("")) {
+            PlusToaster.doIt(this, "입주가능날을 입력해주세요");
+            return;
+        }
+
+        Button heatTypeView = (Button) findViewById(R.id.heat_btn);
+        String heatType = getHeatType(heatTypeView.getText().toString());
+
+        EditText managementFeeView = (EditText) findViewById(R.id.pay_edt);
+        String managementFee = managementFeeView.getText().toString();
+
+        if (managementFee.equals("")) {
+            PlusToaster.doIt(this, "관리비를 입력해주세요");
+            return;
+        }
+
+        String managementOption = getManagementOption();
+
+        String parking = getParking();
+
+        String pet = getPet();
+
         Charset chars = Charset.forName("UTF-8");
 
         MultipartEntity entity = new MultipartEntity();
         try {
 
-
+            //!! 위치, 이미지 처리
+            entity.addPart("id", new StringBody(userId, chars));
+            entity.addPart("type", new StringBody(userType, chars));
+            entity.addPart("detail", new StringBody(detail, chars));
             entity.addPart("subject", new StringBody(subject, chars));
+            entity.addPart("kind", new StringBody(roomType, chars));
+            entity.addPart("price", new StringBody(price, chars));
+            entity.addPart("floor", new StringBody(floor, chars));
+            entity.addPart("size", new StringBody(roomSize, chars));
+            entity.addPart("option", new StringBody(option, chars));
+            entity.addPart("movedate", new StringBody(moveDate, chars));
+            entity.addPart("heat_kind", new StringBody(heatType, chars));
+            entity.addPart("m_price", new StringBody(managementFee, chars));
+            entity.addPart("m_price_option", new StringBody(managementOption, chars));
+            entity.addPart("parking", new StringBody(parking, chars));
+            entity.addPart("ani", new StringBody(pet, chars));
+
+
 //이미지 처리
 //            String imageUrl = (String) imageView.getTag();
 //
@@ -409,12 +516,39 @@ public class PostRoomActivity extends Activity implements
 
     }
 
+    private String getHeatType(String s) {
+        if (s.contains("개별")) return "1";
+        if (s.equals("중앙")) return "2";
+        return "1";
+    }
+
+    private String getFloor(String s) {
+        if (s.equals("반지하")) return "0";
+        if (s.equals("옥탑")) return "99";
+
+        return s.replace("층", "");
+
+    }
+
+    private String getRoomType(String s) {
+        if (s.equals("원룸")) return "1";
+        if (s.equals("투룸")) return "2";
+        if (s.equals("쓰리룸")) return "3";
+        if (s.equals("오피스텔")) return "4";
+        if (s.equals("아파트")) return "5";
+        if (s.equals("주택")) return "6";
+        return "1";
+
+    }
+
 
     private void Room() {
         AlertDialog.Builder ab = new AlertDialog.Builder(PostRoomActivity.this, AlertDialog.THEME_HOLO_LIGHT);
         ab.setTitle("선택해주세요.");
         ab.setItems(room, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                changeRoomType(whichButton);
+
             }
         }).setNegativeButton("닫기",
                 new DialogInterface.OnClickListener() {
@@ -422,6 +556,11 @@ public class PostRoomActivity extends Activity implements
                     }
                 });
         ab.show();
+    }
+
+    private void changeRoomType(int whichButton) {
+        Button roomType = (Button) findViewById(R.id.room_btn);
+        roomType.setText(room[whichButton]);
     }
 
     private void Floor() {
@@ -429,6 +568,7 @@ public class PostRoomActivity extends Activity implements
         ab.setTitle("선택해주세요.");
         ab.setItems(floor, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                changeFloor(whichButton);
             }
         }).setNegativeButton("닫기",
                 new DialogInterface.OnClickListener() {
@@ -438,13 +578,66 @@ public class PostRoomActivity extends Activity implements
         ab.show();
     }
 
+    private void changeFloor(int whichButton) {
+        Button floorView = (Button) findViewById(R.id.floor_btn);
+        floorView.setText(floor[whichButton]);
+    }
+
     @Override
     public void onSuccess(Integer from, Object datas) {
         switch (from) {
             case REGISTER_ROOM:
-               //구현!!
+                //구현!!
                 break;
 
         }
+    }
+
+    public String getOption() {
+        StringBuilder builder = new StringBuilder();
+        if (option01flag) builder.append("4" + ",");
+        if (option02flag) builder.append("5" + ",");
+        if (option03flag) builder.append("6" + ",");
+        if (option04flag) builder.append("7" + ",");
+        if (option05flag) builder.append("8" + ",");
+        if (option06flag) builder.append("9" + ",");
+        if (option07flag) builder.append("10" + ",");
+        if (option08flag) builder.append("11" + ",");
+        if (option09flag) builder.append("12" + ",");
+        if (option10flag) builder.append("13" + ",");
+        if (option11flag) builder.append("14" + ",");
+        if (option12flag) builder.append("15" + ",");
+        if (option13flag) builder.append("16" + ",");
+
+        return builder.toString();
+    }
+
+    public String getManagementOption() {
+
+        StringBuilder builder = new StringBuilder();
+        if (option21flag) builder.append("6" + ",");
+        if (option22flag) builder.append("4" + ",");
+        if (option23flag) builder.append("1" + ",");
+        if (option24flag) builder.append("3" + ",");
+        if (option25flag) builder.append("5" + ",");
+        if (option26flag) builder.append("2" + ",");
+
+        return builder.toString();
+    }
+
+    public String getParking() {
+        return flag01 ? "2" : "1";
+    }
+
+    public String getPet() {
+        return flag02 ? "2" : "1";
+    }
+
+
+    public String getUserType() {
+
+        SharedPreferences sharedPreference = getSharedPreferences(
+                BBGGConstants.PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreference.getString(BBGGConstants.KEY_USER_TYPE, "");
     }
 }

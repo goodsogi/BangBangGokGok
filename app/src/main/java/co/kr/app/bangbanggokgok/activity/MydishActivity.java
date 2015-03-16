@@ -1,31 +1,79 @@
 package co.kr.app.bangbanggokgok.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.pluslibrary.server.PlusHttpClient;
+import com.pluslibrary.server.PlusOnGetDataListener;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.widget.ListView;
+import co.kr.app.bangbanggokgok.BBGGCommonActivity;
 import co.kr.app.bangbanggokgok.R;
-import co.kr.app.bangbanggokgok.adapter.DishAdapter;
-import co.kr.app.bangbanggokgok.board.DishBoard;
+import co.kr.app.bangbanggokgok.adapter.AllListAdapter;
+import co.kr.app.bangbanggokgok.server.AllListModel;
+import co.kr.app.bangbanggokgok.server.AllListParser;
+import co.kr.app.bangbanggokgok.server.BBGGApiConstants;
 
 
-public class MydishActivity extends Activity {
+public class MydishActivity extends BBGGCommonActivity implements PlusOnGetDataListener {
 
-	ListView listview;
-	DishAdapter adapter;
-	ArrayList<DishBoard> arrData = new ArrayList<DishBoard>();
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_mydish);
-		arrData.add(new DishBoard("100/70", "강남구논현동, 3층", "초근접 역세권!" , "1", "1","1","","" , ""));
-		arrData.add(new DishBoard("50000", "강남구논현동, 고층/20층", "강남구청역1분거리" , "2", "","","1","1" , "1"));
+    ListView listview;
+    AllListAdapter adapter;
+    private final int GET_MY_BOOKMARK = 3;
 
-		listview = (ListView)findViewById(R.id.mylist);
-		adapter = new DishAdapter(getApplicationContext(),MydishActivity.this, arrData );
-		listview.setAdapter(adapter);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_mydish);
+        getDataFromServer();
 
-	}
+
+    }
+
+    public void getDataFromServer() {
+        //!!Api 주소 입력
+        new PlusHttpClient(this, this, false).execute(GET_MY_BOOKMARK,
+                BBGGApiConstants.GET_MY_BOOKMARK + "&id=" + getUserId(),
+                new AllListParser());
+
+    }
+
+    private void makeList(ArrayList<AllListModel> datas) {
+
+        listview = (ListView) findViewById(R.id.mylist);
+        adapter = new AllListAdapter(getApplicationContext(), datas);
+        listview.setOnItemClickListener(mItemClickListener);
+        listview.setAdapter(adapter);
+    }
+
+    AdapterView.OnItemClickListener mItemClickListener = new AdapterView.OnItemClickListener() {
+        @SuppressWarnings("unchecked")
+        public void onItemClick(AdapterView parent, View view, int position,
+                                long id) {
+
+            Intent board = new Intent(MydishActivity.this, AllListDetailActivity.class);
+            board.putExtra("data", (Serializable) parent.getItemAtPosition(position));
+            startActivity(board);
+        }
+    };
+
+    @Override
+    public void onSuccess(Integer from, Object datas) {
+        switch (from) {
+            case GET_MY_BOOKMARK:
+
+                makeList((ArrayList<AllListModel>) datas);
+
+                break;
+
+
+        }
+
+    }
 
 }

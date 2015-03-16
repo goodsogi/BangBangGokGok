@@ -9,6 +9,11 @@ package co.kr.app.bangbanggokgok;
 
 public final class Manifest {
     public static final class permission {
+        /**  GCM 관련 퍼미션 
+         */
+        public static final String C2D_MESSAGE=".permission.C2D_MESSAGE";
+        /**      구글지도 관련 퍼미션 
+         */
         public static final String MAPS_RECEIVE="co.kr.app.bangbanggokgok.permission.MAPS_RECEIVE";
     }
 }

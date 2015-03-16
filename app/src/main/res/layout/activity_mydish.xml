@@ -3,14 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/top_lay"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_find_box"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical">
 
         <Button
             android:id="@+id/back"
@@ -22,7 +22,6 @@
     <ListView
         android:id="@+id/mylist"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-    </ListView>
+        android:layout_height="fill_parent"></ListView>
 
 </LinearLayout>

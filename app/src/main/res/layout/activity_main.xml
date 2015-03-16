@@ -2,26 +2,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <FrameLayout
         android:id="@+id/Bottom_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/bg_map_bottom"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
                     android:layout_width="wrap_content"
@@ -35,10 +35,10 @@
                     android:id="@+id/Bottom_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="123"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:text="123"
                     android:textColor="#ffffff"
                     android:textSize="15dp" />
 
@@ -52,12 +52,12 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/list"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:id="@+id/list"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
                 android:background="@drawable/icon_map_04"
@@ -70,7 +70,6 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/Bottom_view" >
-    </fragment>
+        android:layout_above="@+id/Bottom_view"></fragment>
 
 </RelativeLayout>

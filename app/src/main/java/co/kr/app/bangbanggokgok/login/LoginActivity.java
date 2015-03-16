@@ -9,7 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.facebook.Request;
+import com.facebook.Response;
+import com.facebook.Session;
+import com.facebook.SessionState;
+import com.facebook.model.GraphUser;
 import com.pluslibrary.PlusConstants;
 import com.pluslibrary.server.PlusHttpClient;
 import com.pluslibrary.server.PlusInputStreamStringConverter;
@@ -17,12 +23,13 @@ import com.pluslibrary.server.PlusOnGetDataListener;
 import com.pluslibrary.utils.PlusClickGuard;
 import com.pluslibrary.utils.PlusToaster;
 
+import co.kr.app.bangbanggokgok.BBGGCommonActivity;
 import co.kr.app.bangbanggokgok.BBGGConstants;
 import co.kr.app.bangbanggokgok.MainActivity;
 import co.kr.app.bangbanggokgok.R;
 import co.kr.app.bangbanggokgok.server.BBGGApiConstants;
 
-public class LoginActivity extends Activity implements PlusOnGetDataListener {
+public class LoginActivity extends BBGGCommonActivity implements PlusOnGetDataListener {
 
 	private static final int LOG_IN = 0;
 
@@ -112,31 +119,59 @@ public class LoginActivity extends Activity implements PlusOnGetDataListener {
 	 * @param v
 	 */
 	public void findPassword(View v) {
-        //구현 필요
 
 
-//		PlusClickGuard.doIt(v);
-//		Intent intent = new Intent(this, FWWebViewActivity.class);
-//		intent.putExtra(PlusConstants.KEY_URL, FWWebpageUrls.URL_MAIN
-//				+ FWWebpageUrls.FIND_PASSWORD);
-//		startActivity(intent);
+		PlusClickGuard.doIt(v);
+		Intent intent = new Intent(this, FindPasswordActivity.class);
+		startActivity(intent);
 	}
 
 
     public void doFacebookLogin(View v) {
-        //구현 필요
+        // start Facebook Login
+        Session.openActiveSession(this, true, new Session.StatusCallback() {
+
+            // callback when session changes state
+            @Override
+            public void call(Session session, SessionState state, Exception exception) {
+                if (session.isOpened()) {
+
+                    // make request to the /me API
+                    Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
+
+                        // callback after Graph API response with user object
+                        @Override
+                        public void onCompleted(GraphUser user, Response response) {
+                            if (user != null) {
+                                PlusToaster.doIt(LoginActivity.this, "페이스북 로그인 성공!");
+                                goMain();
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
 
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+    }
+
+
     public void doJoin(View v) {
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, PolicyActivity.class);
+        intent.putExtra(BBGGConstants.KEY_SIGNUP_TYPE, BBGGConstants.NORMAL_SIGNUP);
 		startActivity(intent);
 
     }
 
     public void doJoinBroker(View v) {
-        Intent intent = new Intent(this, SignUpBrokerActivity.class);
+        Intent intent = new Intent(this, PolicyActivity.class);
+        intent.putExtra(BBGGConstants.KEY_SIGNUP_TYPE, BBGGConstants.BROKER_SIGNUP);
         startActivity(intent);
 
     }
@@ -148,32 +183,35 @@ public class LoginActivity extends Activity implements PlusOnGetDataListener {
 	 */
 	public void doLogin(View v) {
 //임시로 처리
-        goMain();
-        return;
+//        goMain();
+//        return;
 
 
-//		PlusClickGuard.doIt(v);
-//		// 아이디
-//		EditText idInput = (EditText) findViewById(R.id.id_input);
-//		mID = idInput.getText().toString();
-//
-//		if (mID.equals("")) {
-//			PlusToaster.doIt(this, "아이디를 입력해주세요");
-//			return;
-//		}
-//		// 비밀번호
-//		EditText passwordInput = (EditText) findViewById(R.id.password_input);
-//		mPassword = passwordInput.getText().toString();
-//
-//		if (mPassword.equals("")) {
-//			PlusToaster.doIt(this, "비밀번호를 입력해주세요");
-//			return;
-//		}
-////수정 필요!!
-//        new PlusHttpClient(this, this, false).execute(LOG_IN,
-//                BBGGApiConstants.LOG_IN + "?mid=" + mID + "&pass=" + mPassword
-//                       ,
-//                new PlusInputStreamStringConverter());
+		PlusClickGuard.doIt(v);
+		// 아이디
+		EditText idInput = (EditText) findViewById(R.id.id_input);
+		mID = idInput.getText().toString();
+
+		if (mID.equals("")) {
+			PlusToaster.doIt(this, "아이디를 입력해주세요");
+			return;
+		}
+		// 비밀번호
+		EditText passwordInput = (EditText) findViewById(R.id.password_input);
+		mPassword = passwordInput.getText().toString();
+
+		if (mPassword.equals("")) {
+			PlusToaster.doIt(this, "비밀번호를 입력해주세요");
+			return;
+		}
+//수정 필요!!
+        //임시로 아이디 비번 지정
+//        mID = "test";
+//        mPassword = "1234";
+        new PlusHttpClient(this, this, false).execute(LOG_IN,
+                BBGGApiConstants.LOG_IN + "?id=" + mID + "&passwd=" + mPassword
+                       ,
+                new PlusInputStreamStringConverter());
 
 // gcm 푸시
 //		FWGcmRegister gcmRegister = new FWGcmRegister(this);
@@ -191,7 +229,7 @@ public class LoginActivity extends Activity implements PlusOnGetDataListener {
 		switch (from) {
 		case LOG_IN:
 
-			if (((String) datas).contains("OK")) {
+			if (((String) datas).contains("success")) {
 				PlusToaster.doIt(LoginActivity.this, "로그인했습니다");
 
 //				Editor e = mSharedPreference.edit();

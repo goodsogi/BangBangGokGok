@@ -3,13 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/top_lay"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_find_box" >
+        android:background="@drawable/bg_find_box">
 
         <ImageButton
             android:id="@+id/back"
@@ -24,7 +24,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:background="@drawable/icon_heart" />
+            android:onClick="addToBookmark"
+            android:background="@drawable/bookmark_btn_selector" />
 
         <ImageButton
             android:id="@+id/share_btn"
@@ -54,22 +55,22 @@
         android:id="@+id/main_scrollview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:scrollbars="none" >
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/main_img"
                     android:layout_width="fill_parent"
-                    android:layout_height="120dp" android:scaleType="centerCrop"
-                     />
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop" />
 
                 <ImageView
                     android:id="@+id/banggok_img"
@@ -83,13 +84,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="#000000"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -112,7 +113,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -135,11 +136,11 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:id="@+id/qa_txt"
@@ -201,12 +202,12 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:id="@+id/body_deposit"
@@ -227,7 +228,7 @@
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:id="@+id/body_depositsum"
@@ -251,7 +252,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -260,7 +261,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -285,7 +286,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -307,7 +308,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:onClick="showRoomSizeByPyeong"
                         android:background="@drawable/icon_list_v_07" />
+
+                    <co.kr.app.bangbanggokgok.common.H5TextView
+                        android:id="@+id/pyeong_roomsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#000000" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -317,7 +327,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -342,7 +352,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -367,7 +377,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -392,7 +402,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -417,7 +427,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -442,7 +452,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -467,7 +477,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -492,7 +502,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="100dp"
@@ -517,7 +527,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="fill_parent"
@@ -546,7 +556,7 @@
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp" >
+                        android:layout_marginTop="5dp">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:id="@+id/body_addfull"
@@ -582,7 +592,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="fill_parent"
@@ -594,7 +604,7 @@
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:id="@+id/body_body"
@@ -613,6 +623,7 @@
                             android:layout_marginLeft="5dp"
                             android:text="로드뷰 보기"
                             android:textColor="#000000"
+                            android:onClick="showStreetView"
                             android:textSize="11dp" />
                     </RelativeLayout>
                 </LinearLayout>
@@ -625,7 +636,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:gravity="center" >
+                    android:gravity="center">
 
                     <!--
                    <fragment
@@ -646,11 +657,20 @@
 
                     -->
 
-                    <ImageView
-                        android:id="@+id/transparent_image"
+                    <fragment
+                        android:id="@+id/mapview"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/img_list_v_roadview" />
+                        android:layout_above="@+id/Bottom_view"></fragment>
+
+
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/transparent_image"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:background="@drawable/img_list_v_roadview" />-->
                 </RelativeLayout>
 
                 <LinearLayout
@@ -660,7 +680,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/body_surroundings"

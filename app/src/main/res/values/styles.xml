@@ -4,4 +4,10 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
+
+    //Theme이 아니라 android:Theme.Holo를 사용해야 함
+    <style name="MyCustomTheme" parent="android:Theme.Holo">
+        <item name="android:homeAsUpIndicator">@drawable/icon_top_back</item>
+    </style>
+
 </resources>

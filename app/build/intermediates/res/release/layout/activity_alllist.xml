@@ -3,17 +3,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff"
-    android:orientation="vertical" >
-<co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity
+    android:orientation="vertical">
+
+    <co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity
         android:id="@+id/softmenu_menu_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
-    </co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
-<ListView
+       ></co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" android:background="#73c507" />
+    <ListView
         android:id="@+id/mylist"
-        android:layout_marginTop="7dp"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-    </ListView>
+        android:layout_height="fill_parent"
+        ></ListView>
 </LinearLayout><!-- From: file:/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/src/main/res/layout/activity_alllist.xml -->

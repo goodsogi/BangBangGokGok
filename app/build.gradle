@@ -21,6 +21,7 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.google.android.gms:play-services:+'
+    compile 'com.facebook.android:facebook-android-sdk:3.21.1'
     compile project(':plusLibrary')
     //compile files('libs/picasso-2.4.0.jar')
     //compile files('libs/volley.jar')

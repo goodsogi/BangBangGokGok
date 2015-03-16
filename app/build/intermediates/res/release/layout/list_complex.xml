@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
-     
+    android:orientation="vertical">
 
-    <ImageView 
+
+    <ImageView
         android:id="@+id/img"
-        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:background="@drawable/img_main_center"/>
- 
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_main_center" />
+
 </LinearLayout><!-- From: file:/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/src/main/res/layout/list_complex.xml -->

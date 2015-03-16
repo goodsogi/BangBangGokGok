@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,8 +42,10 @@ public class AllListAdapter extends BBGGCommonAdapter<AllListModel> {
 
 		ImageView main_img = PlusViewHolder.get(convertView, R.id.main_img);
 
-
-		deposit.setText(data.getPrice01());
+        String priceText =  !data.getPrice11().trim().equals("")? data.getPrice11() + "/" +data.getPrice01():data.getPrice01();
+		deposit.setText(priceText);
+        //deposit.setTextColor(data.getGubun().equals("1") ? Color.RED: Color.BLUE);
+        deposit.setTextColor(Color.parseColor("#73c507"));
 		area.setText(data.getAddress() + ", " + data.getFloor());
 		one_report.setText(data.getSubject());
 

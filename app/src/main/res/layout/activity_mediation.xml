@@ -3,30 +3,36 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity
         android:id="@+id/softmenu_menu_list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
-    </co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
+        ></co.kr.app.bangbanggokgok.activity.ListSoftMenuActivity>
 
-    <RelativeLayout
+    <!--<RelativeLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:fillViewport="true"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="vertical" >-->
+
+    <!--<co.kr.app.bangbanggokgok.common.PinnedHeaderListView-->
+    <!--android:id="@+id/list"-->
+    <!--android:layout_marginTop="7dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:divider="@null"-->
+    <!--android:footerDividersEnabled="false"-->
+    <!--android:headerDividersEnabled="false" />-->
+    <!--</RelativeLayout>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" android:background="#73c507" />
+    <ListView
+        android:id="@+id/list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:gravity="center_vertical"
-        android:orientation="vertical" >
-
-        <co.kr.app.bangbanggokgok.common.PinnedHeaderListView
-            android:id="@+id/list"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="@null"
-            android:footerDividersEnabled="false"
-            android:headerDividersEnabled="false" />
-    </RelativeLayout>
-
+        android:layout_height="fill_parent"
+        ></ListView>
 </LinearLayout>

@@ -2,29 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ebebeb"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:background="#ffffff"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="48dp"
-            android:layout_height="48dp" android:background="@drawable/back_btn" android:onClick="goBack"/>
+            android:layout_height="48dp"
+            android:background="@drawable/back_btn"
+            android:onClick="goBack" />
 
         <ImageView
             android:layout_width="48dp"
-            android:layout_height="48dp" android:src="@drawable/home"/>
+            android:layout_height="48dp"
+            android:src="@drawable/home" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:gravity="center_vertical"
             android:paddingLeft="7dp"
-            android:text="핸드폰 번호인증"
-            android:textSize="18sp"
+            android:text="가입하기"
             android:textColor="#93c41d"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -36,59 +41,71 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="15dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="7dp"
-        android:text="핸드폰 번호"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="19dp"
+        android:text="회원정보를 입력해주세요"
         android:textColor="#000000"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:hint="  -뺀 숫자만 입력해주세요" />
+        android:layout_height="289dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_join_box"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="30dp"
+            android:hint="이름"
+            android:textSize="13sp" />
+
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="이메일(ID로 사용됩니다.)"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/userEmailAgain"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="이메일확인(이메일을 다시 한번 써주세요)"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/userPassword"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:hint="비밀번호"
+            android:textSize="13sp" />
+
+
+        <TextView
+            android:id="@+id/userPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="12dp"
+            android:textColor="#000000" />
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="15dp"
-        android:onClick="requestAuthNo"
-        android:background="@drawable/icon_join_01" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="27dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="7dp"
-        android:text="인증번호"
-        android:textColor="#000000"
-        android:textStyle="bold" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-         />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="15dp"
-        android:onClick="doAuth"
-        android:background="@drawable/icon_join_02" />
-
-
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/icon_join_04"
+        android:onClick="signUp" />
 </LinearLayout>

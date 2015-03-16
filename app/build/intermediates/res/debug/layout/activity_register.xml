@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffff" >
+    android:background="#ffffff">
 
     <LinearLayout
         android:id="@+id/top_lay"
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@drawable/bg_find_box"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical">
 
         <Button
             android:id="@+id/back"
@@ -22,19 +22,19 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/top_lay" >
+        android:layout_below="@+id/top_lay">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
                     android:layout_width="fill_parent"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
                     android:layout_width="fill_parent"
@@ -69,6 +69,16 @@
                     android:text="사진 업로드"
                     android:textColor="#000000"
                     android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/picture_btn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/img_upload_02"
+                    android:paddingLeft="10dp" />
 
                 <EditText
                     android:id="@+id/detail_edt"
@@ -84,15 +94,6 @@
                     android:textColor="#000000"
                     android:textSize="13dp" />
 
-                <Button
-                    android:id="@+id/picture_btn"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginRight="13dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/img_upload_02"
-                    android:paddingLeft="10dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -100,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
                     android:layout_width="fill_parent"
@@ -116,14 +117,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_upload_s_title"
                     android:gravity="center_vertical"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -140,7 +141,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="19dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -150,16 +151,6 @@
                         android:textColor="#000000"
                         android:textSize="18dp" />
 
-                    <EditText
-                        android:id="@+id/name_edt"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:layout_marginRight="30dp"
-                        android:background="@drawable/img_upload_04"
-                        android:hint="   풀옵션 원룸입니다."
-                        android:textColor="#000000"
-                        android:textSize="13dp" />
                 </LinearLayout>
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
@@ -174,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -209,7 +200,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -237,7 +228,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -264,7 +255,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -291,7 +282,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -318,7 +309,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_upload_s_title"
                     android:gravity="center_vertical"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -335,7 +326,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -370,7 +361,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:id="@+id/size"
@@ -421,7 +412,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -443,12 +434,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp" >
+                    android:layout_marginTop="5dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -479,12 +470,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -515,12 +506,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -551,12 +542,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -587,12 +578,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -623,12 +614,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -659,12 +650,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -695,12 +686,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -731,12 +722,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -767,12 +758,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -803,12 +794,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -839,12 +830,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -875,12 +866,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -914,7 +905,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -923,18 +914,28 @@
                         android:text="입주가능날"
                         android:textColor="#000000"
                         android:textSize="18dp" />
-
-                    <Button
-                        android:id="@+id/day_btn"
+                    <EditText
+                        android:id="@+id/movedate_edt"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginRight="50dp"
-                        android:background="#FFFFFF"
-                        android:gravity="right|center_vertical"
-                        android:text="2014-10-15 이후"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="90dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="예) 2014-10-15 이후"
+                        android:background="@drawable/img_upload_04"
                         android:textColor="#000000"
-                        android:textSize="19dp" />
+                        android:textSize="13dp" />
+                    <!--<Button-->
+                        <!--android:id="@+id/day_btn"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="7dp"-->
+                        <!--android:layout_marginRight="50dp"-->
+                        <!--android:background="#FFFFFF"-->
+                        <!--android:gravity="right|center_vertical"-->
+                        <!--android:text="2014-10-15 이후"-->
+                        <!--android:textColor="#000000"-->
+                        <!--android:textSize="19dp" />-->
                 </LinearLayout>
 
                 <co.kr.app.bangbanggokgok.common.H5TextView
@@ -949,7 +950,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -984,7 +985,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:id="@+id/bi"
@@ -1005,8 +1006,8 @@
                         android:layout_toLeftOf="@+id/pay"
                         android:layout_toRightOf="@+id/bi"
                         android:background="@drawable/img_upload_04"
-                        android:hint="0   "
                         android:gravity="right|center_vertical"
+                        android:hint="0   "
                         android:textColor="#000000"
                         android:textSize="13dp" />
 
@@ -1034,7 +1035,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -1056,12 +1057,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp" >
+                    android:layout_marginTop="5dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1092,12 +1093,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1128,12 +1129,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1164,12 +1165,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1200,12 +1201,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1236,12 +1237,12 @@
                 <FrameLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp" >
+                    android:layout_marginTop="3dp">
 
                     <RelativeLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#DCE1E7" >
+                        android:background="#DCE1E7">
 
                         <co.kr.app.bangbanggokgok.common.H5TextView
                             android:layout_width="wrap_content"
@@ -1271,11 +1272,11 @@
 
                 <RelativeLayout
                     android:layout_width="fill_parent"
-                    android:layout_marginTop="15dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginTop="15dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -1316,7 +1317,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <co.kr.app.bangbanggokgok.common.H5TextView
                         android:layout_width="wrap_content"
@@ -1353,5 +1354,17 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <EditText
+        android:id="@+id/name_edt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_upload_04"
+        android:hint="   풀옵션 원룸입니다."
+        android:textColor="#000000"
+        android:textSize="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp" />
 
 </RelativeLayout><!-- From: file:/home/johnny/AndroidStudioProjects/App.BangBangGokGok/app/src/main/res/layout/activity_register.xml -->

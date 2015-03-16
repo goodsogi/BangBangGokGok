@@ -61,7 +61,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showLogoScreen();
+        //showLogoScreen();
         changeActionBarIconAndBackground();
         getCurrentLocation();
         setUpMapIfNeeded();
@@ -104,9 +104,9 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
 
     }
 
-    private void showLogoScreen() {
-        startActivity(new Intent(this, IntroActivity.class));
-    }
+//    private void showLogoScreen() {
+//        startActivity(new Intent(this, IntroActivity.class));
+//    }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
         public void onClick(View v) {
@@ -270,8 +270,9 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
     @Override
     public void onLocationChanged(Location location) {
         mIsGpsCatched = true;
-        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 15));
+        mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 11));
         showHouseMarkers();
+        removeLocationListener();
     }
 
     private void showHouseMarkers() {
@@ -330,7 +331,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
 
     public void getDataFromServer() {
         new PlusHttpClient(this, this, false).execute(GET_ALL_LIST,
-                BBGGApiConstants.GET_ALL_LIST,
+                BBGGApiConstants.GET_ALL_ROOM_LIST,
                 new AllListParser());
 
     }
